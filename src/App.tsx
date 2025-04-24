@@ -1,10 +1,33 @@
 import {useStorage} from './hooks/useStorage'
 import { useHistory } from './hooks/useHistory'
+import { ReactElement, useRef, useState } from 'react'
 import './App.css'
 
 function App() {
   const [count,setCount] = useStorage('count',1)
   const [url,pushUrl,replaceUrl] = useHistory()
+  const refDiv = useRef(null)
+  let timer = useRef(null)
+  console.log('??',refDiv.current)
+  const refClick = (e)=>{
+    console.log(e)
+    console.log(refDiv.current)
+    refDiv.current!.style.background = 'red'
+  }
+
+  const [age,setAge] = useState(0)
+  const start = ()=>{
+    timer.current = setInterval(() => {
+      setAge((age)=>age+1)
+      console.log(age)
+    }, 300);
+  }
+
+  const stop = ()=>{
+     if(timer){
+      clearInterval(timer.current)
+     }
+  }
 
   return (
     <>
@@ -14,6 +37,11 @@ function App() {
      <div>url:{url}</div>
      <button onClick={()=>pushUrl('/A')}>to A</button>
      <button onClick={()=>replaceUrl('/B')}>to B</button>
+     <div ref={refDiv}>没钱了没钱了</div>
+     <button onClick={refClick}>ref按钮</button>
+     <div>{age}</div>
+     <button onClick={start}>开始setAge</button>
+     <button onClick={stop}>结束setAge</button>
     </>
   )
 }
