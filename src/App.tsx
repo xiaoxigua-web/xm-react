@@ -1,6 +1,7 @@
 import {useStorage} from './hooks/useStorage'
 import { useHistory } from './hooks/useHistory'
-import { ReactElement, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
+import ImperativeHandleTest from './view/useImperativeHandle'
 import './App.css'
 
 function App() {
@@ -42,6 +43,8 @@ function App() {
      <div>{age}</div>
      <button onClick={start}>开始setAge</button>
      <button onClick={stop}>结束setAge</button>
+     <br />
+     <ImperativeHandleTest></ImperativeHandleTest>
     </>
   )
 }
