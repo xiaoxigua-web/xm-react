@@ -3,6 +3,7 @@ import { useHistory } from './hooks/useHistory'
 import { useRef, useState } from 'react'
 import ImperativeHandleTest from './view/useImperativeHandle'
 import ContextTest from './view/useContext'
+import UseCallbackTest from './view/useCallback1'
 import './App.css'
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
      <br />
      <ImperativeHandleTest></ImperativeHandleTest>
      <ContextTest></ContextTest>
+     <UseCallbackTest></UseCallbackTest>
     </>
   )
 }
