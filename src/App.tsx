@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import ImperativeHandleTest from './view/useImperativeHandle'
 import ContextTest from './view/useContext'
 import UseCallbackTest from './view/useCallback1'
+import UseCallbackTest2 from './view/useCallback2'
 import './App.css'
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
      <ImperativeHandleTest></ImperativeHandleTest>
      <ContextTest></ContextTest>
      <UseCallbackTest></UseCallbackTest>
+     <UseCallbackTest2></UseCallbackTest2>
     </>
   )
 }
